@@ -1,0 +1,2519 @@
+{
+	"schemaVersion": "2.0",
+	"id": 0,
+	"name": "@anvilkit/analytics-core",
+	"variant": "project",
+	"kind": 1,
+	"flags": {},
+	"children": [
+		{
+			"id": 30,
+			"name": "AnalyticsAdapter",
+			"variant": "declaration",
+			"kind": 256,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "The uniform surface every adapter (Noop/Console/LocalStorage/Http/GA4/PostHog) implements."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 39,
+					"name": "flush",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"signatures": [
+						{
+							"id": 40,
+							"name": "flush",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"target": {
+									"packageName": "typescript",
+									"packagePath": "lib/lib.es5.d.ts",
+									"qualifiedName": "Promise"
+								},
+								"typeArguments": [
+									{
+										"type": "intrinsic",
+										"name": "void"
+									}
+								],
+								"name": "Promise",
+								"package": "typescript"
+							}
+						}
+					]
+				},
+				{
+					"id": 35,
+					"name": "identify",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"signatures": [
+						{
+							"id": 36,
+							"name": "identify",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"parameters": [
+								{
+									"id": 37,
+									"name": "userId",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 38,
+									"name": "traits",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "reference",
+										"target": {
+											"packageName": "typescript",
+											"packagePath": "lib/lib.es5.d.ts",
+											"qualifiedName": "Record"
+										},
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											},
+											{
+												"type": "intrinsic",
+												"name": "unknown"
+											}
+										],
+										"name": "Record",
+										"package": "typescript"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 31,
+					"name": "track",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"signatures": [
+						{
+							"id": 32,
+							"name": "track",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"parameters": [
+								{
+									"id": 33,
+									"name": "eventName",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								},
+								{
+									"id": 34,
+									"name": "properties",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"target": {
+											"packageName": "typescript",
+											"packagePath": "lib/lib.es5.d.ts",
+											"qualifiedName": "Record"
+										},
+										"typeArguments": [
+											{
+												"type": "intrinsic",
+												"name": "string"
+											},
+											{
+												"type": "intrinsic",
+												"name": "unknown"
+											}
+										],
+										"name": "Record",
+										"package": "typescript"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 41,
+					"name": "updatePrivacyStatus",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"signatures": [
+						{
+							"id": 42,
+							"name": "updatePrivacyStatus",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"parameters": [
+								{
+									"id": 43,
+									"name": "consent",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Methods",
+					"children": [
+						39,
+						35,
+						31,
+						41
+					]
+				}
+			]
+		},
+		{
+			"id": 26,
+			"name": "AnalyticsProcessor",
+			"variant": "declaration",
+			"kind": 256,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "A pluggable transform run before delivery; returning "
+					},
+					{
+						"kind": "code",
+						"text": "`null`"
+					},
+					{
+						"kind": "text",
+						"text": " drops the event."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 27,
+					"name": "process",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"signatures": [
+						{
+							"id": 28,
+							"name": "process",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"parameters": [
+								{
+									"id": 29,
+									"name": "event",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"target": 15,
+										"name": "TrackEvent",
+										"package": "@anvilkit/analytics-core"
+									}
+								}
+							],
+							"type": {
+								"type": "union",
+								"types": [
+									{
+										"type": "reference",
+										"target": 15,
+										"name": "TrackEvent",
+										"package": "@anvilkit/analytics-core"
+									},
+									{
+										"type": "literal",
+										"value": null
+									}
+								]
+							}
+						}
+					]
+				}
+			],
+			"groups": [
+				{
+					"title": "Methods",
+					"children": [
+						27
+					]
+				}
+			]
+		},
+		{
+			"id": 5,
+			"name": "BaseEventData",
+			"variant": "declaration",
+			"kind": 256,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "The envelope fields stamped onto every emitted event."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 6,
+					"name": "event_name",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 14,
+					"name": "experiment_id",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Reserved A/B-testing extension hook."
+							}
+						]
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 12,
+					"name": "page_id",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 9,
+					"name": "session_id",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 13,
+					"name": "source",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "literal",
+								"value": "studio"
+							},
+							{
+								"type": "literal",
+								"value": "published_site"
+							}
+						]
+					}
+				},
+				{
+					"id": 8,
+					"name": "timestamp",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 10,
+					"name": "user_id",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 7,
+					"name": "version",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 11,
+					"name": "workspace_id",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						6,
+						14,
+						12,
+						9,
+						13,
+						8,
+						10,
+						7,
+						11
+					]
+				}
+			],
+			"extendedBy": [
+				{
+					"type": "reference",
+					"target": 15,
+					"name": "TrackEvent"
+				}
+			]
+		},
+		{
+			"id": 52,
+			"name": "ConsoleAdapterConfig",
+			"variant": "declaration",
+			"kind": 256,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Configuration for "
+					},
+					{
+						"kind": "inline-tag",
+						"tag": "@link",
+						"text": "createConsoleAdapter",
+						"target": 59
+					},
+					{
+						"kind": "text",
+						"text": "."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 54,
+					"name": "consentGranted",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Gate emission on consent."
+							}
+						],
+						"blockTags": [
+							{
+								"tag": "@default",
+								"content": [
+									{
+										"kind": "code",
+										"text": "```ts\ntrue (dev convenience).\n```"
+									}
+								]
+							}
+						]
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				},
+				{
+					"id": 55,
+					"name": "logger",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Override the sink (defaults to "
+							},
+							{
+								"kind": "code",
+								"text": "`console`"
+							},
+							{
+								"kind": "text",
+								"text": "). Useful for tests."
+							}
+						]
+					},
+					"type": {
+						"type": "reference",
+						"target": {
+							"packageName": "typescript",
+							"packagePath": "lib/lib.es5.d.ts",
+							"qualifiedName": "Pick"
+						},
+						"typeArguments": [
+							{
+								"type": "reference",
+								"target": {
+									"packageName": "typescript",
+									"packagePath": "lib/lib.dom.d.ts",
+									"qualifiedName": "Console"
+								},
+								"name": "Console",
+								"package": "typescript"
+							},
+							{
+								"type": "literal",
+								"value": "log"
+							}
+						],
+						"name": "Pick",
+						"package": "typescript"
+					}
+				},
+				{
+					"id": 58,
+					"name": "pageId",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 53,
+					"name": "source",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "literal",
+								"value": "studio"
+							},
+							{
+								"type": "literal",
+								"value": "published_site"
+							}
+						]
+					}
+				},
+				{
+					"id": 56,
+					"name": "userId",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Optional base context merged into every event."
+							}
+						]
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 57,
+					"name": "workspaceId",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						54,
+						55,
+						58,
+						53,
+						56,
+						57
+					]
+				}
+			]
+		},
+		{
+			"id": 44,
+			"name": "HttpAdapterConfig",
+			"variant": "declaration",
+			"kind": 256,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Configuration for the batched, beacon-delivered production transport."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 46,
+					"name": "batchSize",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@default",
+								"content": [
+									{
+										"kind": "code",
+										"text": "```ts\n10\n```"
+									}
+								]
+							}
+						]
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 45,
+					"name": "endpoint",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 47,
+					"name": "flushIntervalMs",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@default",
+								"content": [
+									{
+										"kind": "code",
+										"text": "```ts\n5000\n```"
+									}
+								]
+							}
+						]
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 48,
+					"name": "maxRetries",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@default",
+								"content": [
+									{
+										"kind": "code",
+										"text": "```ts\n3\n```"
+									}
+								]
+							}
+						]
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 50,
+					"name": "privacy",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"type": {
+						"type": "reference",
+						"target": 1,
+						"name": "PrivacyConfig",
+						"package": "@anvilkit/analytics-core"
+					}
+				},
+				{
+					"id": 51,
+					"name": "processors",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"target": 26,
+							"name": "AnalyticsProcessor",
+							"package": "@anvilkit/analytics-core"
+						}
+					}
+				},
+				{
+					"id": 49,
+					"name": "source",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "literal",
+								"value": "studio"
+							},
+							{
+								"type": "literal",
+								"value": "published_site"
+							}
+						]
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						46,
+						45,
+						47,
+						48,
+						50,
+						51,
+						49
+					]
+				}
+			]
+		},
+		{
+			"id": 69,
+			"name": "LocalStorageAdapterConfig",
+			"variant": "declaration",
+			"kind": 256,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Configuration for "
+					},
+					{
+						"kind": "inline-tag",
+						"tag": "@link",
+						"text": "createLocalStorageAdapter",
+						"target": 66
+					},
+					{
+						"kind": "text",
+						"text": "."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 71,
+					"name": "consentGranted",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Gate emission on consent."
+							}
+						],
+						"blockTags": [
+							{
+								"tag": "@default",
+								"content": [
+									{
+										"kind": "code",
+										"text": "```ts\nfalse (privacy-first).\n```"
+									}
+								]
+							}
+						]
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				},
+				{
+					"id": 73,
+					"name": "maxQueueSize",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Drop the oldest events past this many."
+							}
+						],
+						"blockTags": [
+							{
+								"tag": "@default",
+								"content": [
+									{
+										"kind": "code",
+										"text": "```ts\n500\n```"
+									}
+								]
+							}
+						]
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 77,
+					"name": "pageId",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 70,
+					"name": "source",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "literal",
+								"value": "studio"
+							},
+							{
+								"type": "literal",
+								"value": "published_site"
+							}
+						]
+					}
+				},
+				{
+					"id": 74,
+					"name": "storage",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Inject a "
+							},
+							{
+								"kind": "code",
+								"text": "`Storage`"
+							},
+							{
+								"kind": "text",
+								"text": " (tests / SSR). Defaults to "
+							},
+							{
+								"kind": "code",
+								"text": "`globalThis.localStorage`"
+							},
+							{
+								"kind": "text",
+								"text": "."
+							}
+						]
+					},
+					"type": {
+						"type": "reference",
+						"target": {
+							"packageName": "typescript",
+							"packagePath": "lib/lib.dom.d.ts",
+							"qualifiedName": "Storage"
+						},
+						"name": "Storage",
+						"package": "typescript"
+					}
+				},
+				{
+					"id": 72,
+					"name": "storageKey",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [],
+						"blockTags": [
+							{
+								"tag": "@default",
+								"content": [
+									{
+										"kind": "inline-tag",
+										"tag": "@link",
+										"text": "ANALYTICS_QUEUE_KEY",
+										"target": 65
+									}
+								]
+							}
+						]
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 75,
+					"name": "userId",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 76,
+					"name": "workspaceId",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						71,
+						73,
+						77,
+						70,
+						74,
+						72,
+						75,
+						76
+					]
+				}
+			]
+		},
+		{
+			"id": 1,
+			"name": "PrivacyConfig",
+			"variant": "declaration",
+			"kind": 256,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Consent + retention controls honored by every transport adapter."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 2,
+					"name": "consentGranted",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "When "
+							},
+							{
+								"kind": "code",
+								"text": "`false`"
+							},
+							{
+								"kind": "text",
+								"text": ", "
+							},
+							{
+								"kind": "code",
+								"text": "`track`"
+							},
+							{
+								"kind": "text",
+								"text": "/"
+							},
+							{
+								"kind": "code",
+								"text": "`identify`"
+							},
+							{
+								"kind": "text",
+								"text": " are no-ops and the queue is purged."
+							}
+						]
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				},
+				{
+					"id": 4,
+					"name": "retentionDays",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Forwarded as payload metadata; data retention window in days."
+							}
+						]
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					}
+				},
+				{
+					"id": 3,
+					"name": "truncateIpAddress",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Forwarded as payload metadata so the backend can truncate the client IP."
+							}
+						]
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						2,
+						4,
+						3
+					]
+				}
+			]
+		},
+		{
+			"id": 15,
+			"name": "TrackEvent",
+			"variant": "declaration",
+			"kind": 256,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "A fully-formed event ready for transport. Properties are primitives only."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 17,
+					"name": "event_name",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isInherited": true
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"target": 6,
+						"name": "BaseEventData.event_name"
+					}
+				},
+				{
+					"id": 25,
+					"name": "experiment_id",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true,
+						"isInherited": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Reserved A/B-testing extension hook."
+							}
+						]
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"target": 14,
+						"name": "BaseEventData.experiment_id"
+					}
+				},
+				{
+					"id": 23,
+					"name": "page_id",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true,
+						"isInherited": true
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"target": 12,
+						"name": "BaseEventData.page_id"
+					}
+				},
+				{
+					"id": 16,
+					"name": "properties",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"type": {
+						"type": "reference",
+						"target": {
+							"packageName": "typescript",
+							"packagePath": "lib/lib.es5.d.ts",
+							"qualifiedName": "Record"
+						},
+						"typeArguments": [
+							{
+								"type": "intrinsic",
+								"name": "string"
+							},
+							{
+								"type": "union",
+								"types": [
+									{
+										"type": "intrinsic",
+										"name": "string"
+									},
+									{
+										"type": "intrinsic",
+										"name": "number"
+									},
+									{
+										"type": "intrinsic",
+										"name": "boolean"
+									}
+								]
+							}
+						],
+						"name": "Record",
+						"package": "typescript"
+					}
+				},
+				{
+					"id": 20,
+					"name": "session_id",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isInherited": true
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"target": 9,
+						"name": "BaseEventData.session_id"
+					}
+				},
+				{
+					"id": 24,
+					"name": "source",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isInherited": true
+					},
+					"type": {
+						"type": "union",
+						"types": [
+							{
+								"type": "literal",
+								"value": "studio"
+							},
+							{
+								"type": "literal",
+								"value": "published_site"
+							}
+						]
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"target": 13,
+						"name": "BaseEventData.source"
+					}
+				},
+				{
+					"id": 19,
+					"name": "timestamp",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isInherited": true
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "number"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"target": 8,
+						"name": "BaseEventData.timestamp"
+					}
+				},
+				{
+					"id": 21,
+					"name": "user_id",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true,
+						"isInherited": true
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"target": 10,
+						"name": "BaseEventData.user_id"
+					}
+				},
+				{
+					"id": 18,
+					"name": "version",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isInherited": true
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"target": 7,
+						"name": "BaseEventData.version"
+					}
+				},
+				{
+					"id": 22,
+					"name": "workspace_id",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true,
+						"isInherited": true
+					},
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"target": 11,
+						"name": "BaseEventData.workspace_id"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						17,
+						25,
+						23,
+						16,
+						20,
+						24,
+						19,
+						21,
+						18,
+						22
+					]
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"target": 5,
+					"name": "BaseEventData",
+					"package": "@anvilkit/analytics-core"
+				}
+			]
+		},
+		{
+			"id": 88,
+			"name": "AnalyticsEventName",
+			"variant": "declaration",
+			"kind": 2097152,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Union of the canonical system-event names."
+					}
+				]
+			},
+			"type": {
+				"type": "indexedAccess",
+				"indexType": {
+					"type": "typeOperator",
+					"operator": "keyof",
+					"target": {
+						"type": "query",
+						"queryType": {
+							"type": "reference",
+							"target": 80,
+							"name": "ANALYTICS_EVENTS",
+							"package": "@anvilkit/analytics-core"
+						}
+					}
+				},
+				"objectType": {
+					"type": "query",
+					"queryType": {
+						"type": "reference",
+						"target": 80,
+						"name": "ANALYTICS_EVENTS",
+						"package": "@anvilkit/analytics-core"
+					}
+				}
+			}
+		},
+		{
+			"id": 80,
+			"name": "ANALYTICS_EVENTS",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "The six canonical system events."
+					}
+				]
+			},
+			"type": {
+				"type": "reflection",
+				"declaration": {
+					"id": 81,
+					"name": "__type",
+					"variant": "declaration",
+					"kind": 65536,
+					"flags": {},
+					"children": [
+						{
+							"id": 85,
+							"name": "COMPONENT_DROPPED",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isReadonly": true
+							},
+							"type": {
+								"type": "literal",
+								"value": "component_dropped"
+							},
+							"defaultValue": "\"component_dropped\""
+						},
+						{
+							"id": 83,
+							"name": "DRAFT_SAVED",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isReadonly": true
+							},
+							"type": {
+								"type": "literal",
+								"value": "draft_saved"
+							},
+							"defaultValue": "\"draft_saved\""
+						},
+						{
+							"id": 84,
+							"name": "PAGE_PUBLISHED",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isReadonly": true
+							},
+							"type": {
+								"type": "literal",
+								"value": "page_published"
+							},
+							"defaultValue": "\"page_published\""
+						},
+						{
+							"id": 82,
+							"name": "PAGE_VIEW",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isReadonly": true
+							},
+							"type": {
+								"type": "literal",
+								"value": "page_view"
+							},
+							"defaultValue": "\"page_view\""
+						},
+						{
+							"id": 87,
+							"name": "PLUGIN_TOGGLED",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isReadonly": true
+							},
+							"type": {
+								"type": "literal",
+								"value": "plugin_toggled"
+							},
+							"defaultValue": "\"plugin_toggled\""
+						},
+						{
+							"id": 86,
+							"name": "SEO_UPDATED",
+							"variant": "declaration",
+							"kind": 1024,
+							"flags": {
+								"isReadonly": true
+							},
+							"type": {
+								"type": "literal",
+								"value": "seo_updated"
+							},
+							"defaultValue": "\"seo_updated\""
+						}
+					],
+					"groups": [
+						{
+							"title": "Properties",
+							"children": [
+								85,
+								83,
+								84,
+								82,
+								87,
+								86
+							]
+						}
+					]
+				}
+			},
+			"defaultValue": "..."
+		},
+		{
+			"id": 65,
+			"name": "ANALYTICS_QUEUE_KEY",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "The localStorage key the offline queue is persisted under."
+					}
+				]
+			},
+			"type": {
+				"type": "literal",
+				"value": "anvilkit_analytics_queue"
+			},
+			"defaultValue": "\"anvilkit_analytics_queue\""
+		},
+		{
+			"id": 89,
+			"name": "EVENT_VERSION",
+			"variant": "declaration",
+			"kind": 32,
+			"flags": {
+				"isConst": true
+			},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Bumped when the envelope/property contract changes; stamped on every event."
+					}
+				]
+			},
+			"type": {
+				"type": "literal",
+				"value": "1.0.0"
+			},
+			"defaultValue": "\"1.0.0\""
+		},
+		{
+			"id": 59,
+			"name": "createConsoleAdapter",
+			"variant": "declaration",
+			"kind": 64,
+			"flags": {},
+			"comment": {
+				"summary": [],
+				"blockTags": [
+					{
+						"tag": "@file",
+						"content": [
+							{
+								"kind": "text",
+								"text": "Public barrel for "
+							},
+							{
+								"kind": "code",
+								"text": "`@anvilkit/analytics-core`"
+							},
+							{
+								"kind": "text",
+								"text": ". The GA4/PostHog adapters\nare intentionally absent here — they are reachable only via the\n"
+							},
+							{
+								"kind": "code",
+								"text": "`@anvilkit/analytics-core/ga4`"
+							},
+							{
+								"kind": "text",
+								"text": " and "
+							},
+							{
+								"kind": "code",
+								"text": "`/posthog`"
+							},
+							{
+								"kind": "text",
+								"text": " subpaths so their SDKs never\nland in the base bundle."
+							}
+						]
+					}
+				]
+			},
+			"signatures": [
+				{
+					"id": 60,
+					"name": "createConsoleAdapter",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Formatted, consent-aware adapter for local development — logs the built\n"
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "TrackEvent",
+								"target": 15
+							},
+							{
+								"kind": "text",
+								"text": " envelope (sanitized properties included) to the console."
+							}
+						]
+					},
+					"parameters": [
+						{
+							"id": 61,
+							"name": "config",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"target": 52,
+								"name": "ConsoleAdapterConfig",
+								"package": "@anvilkit/analytics-core"
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"target": 30,
+						"name": "AnalyticsAdapter",
+						"package": "@anvilkit/analytics-core"
+					}
+				}
+			]
+		},
+		{
+			"id": 62,
+			"name": "createHttpAdapter",
+			"variant": "declaration",
+			"kind": 64,
+			"flags": {},
+			"signatures": [
+				{
+					"id": 63,
+					"name": "createHttpAdapter",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Production transport: debounced batching, exponential-backoff retries, and\nbfcache-safe delivery.\n\n- Buffers events and POSTs a batch once "
+							},
+							{
+								"kind": "code",
+								"text": "`batchSize`"
+							},
+							{
+								"kind": "text",
+								"text": " is reached or\n  "
+							},
+							{
+								"kind": "code",
+								"text": "`flushIntervalMs`"
+							},
+							{
+								"kind": "text",
+								"text": " elapses.\n- On failure retries with "
+							},
+							{
+								"kind": "code",
+								"text": "`1s · 2s · 4s …`"
+							},
+							{
+								"kind": "text",
+								"text": " backoff up to "
+							},
+							{
+								"kind": "code",
+								"text": "`maxRetries`"
+							},
+							{
+								"kind": "text",
+								"text": "; a\n  batch that never lands is re-queued.\n- On "
+							},
+							{
+								"kind": "code",
+								"text": "`visibilitychange → hidden`"
+							},
+							{
+								"kind": "text",
+								"text": " flushes synchronously via\n  "
+							},
+							{
+								"kind": "code",
+								"text": "`navigator.sendBeacon`"
+							},
+							{
+								"kind": "text",
+								"text": ", falling back to "
+							},
+							{
+								"kind": "code",
+								"text": "`fetch(keepalive:true)`"
+							},
+							{
+								"kind": "text",
+								"text": " — never\n  "
+							},
+							{
+								"kind": "code",
+								"text": "`unload`"
+							},
+							{
+								"kind": "text",
+								"text": "/"
+							},
+							{
+								"kind": "code",
+								"text": "`beforeunload`"
+							},
+							{
+								"kind": "text",
+								"text": ", so bfcache is preserved.\n- "
+							},
+							{
+								"kind": "code",
+								"text": "`track`"
+							},
+							{
+								"kind": "text",
+								"text": "/"
+							},
+							{
+								"kind": "code",
+								"text": "`identify`"
+							},
+							{
+								"kind": "text",
+								"text": " are no-ops without consent; the buffer is purged on\n  consent revoke. "
+							},
+							{
+								"kind": "code",
+								"text": "`truncateIpAddress`"
+							},
+							{
+								"kind": "text",
+								"text": "/"
+							},
+							{
+								"kind": "code",
+								"text": "`retentionDays`"
+							},
+							{
+								"kind": "text",
+								"text": " ride along as payload\n  metadata."
+							}
+						]
+					},
+					"parameters": [
+						{
+							"id": 64,
+							"name": "config",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"target": 44,
+								"name": "HttpAdapterConfig",
+								"package": "@anvilkit/analytics-core"
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"target": 30,
+						"name": "AnalyticsAdapter",
+						"package": "@anvilkit/analytics-core"
+					}
+				}
+			]
+		},
+		{
+			"id": 66,
+			"name": "createLocalStorageAdapter",
+			"variant": "declaration",
+			"kind": 64,
+			"flags": {},
+			"signatures": [
+				{
+					"id": 67,
+					"name": "createLocalStorageAdapter",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Offline MVP queue: appends built events to "
+							},
+							{
+								"kind": "code",
+								"text": "`localStorage`"
+							},
+							{
+								"kind": "text",
+								"text": " (key\n"
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "ANALYTICS_QUEUE_KEY",
+								"target": 65
+							},
+							{
+								"kind": "text",
+								"text": "). "
+							},
+							{
+								"kind": "code",
+								"text": "`track`"
+							},
+							{
+								"kind": "text",
+								"text": "/"
+							},
+							{
+								"kind": "code",
+								"text": "`identify`"
+							},
+							{
+								"kind": "text",
+								"text": " are consent-gated; the\nqueue is purged on consent revoke. "
+							},
+							{
+								"kind": "code",
+								"text": "`flush`"
+							},
+							{
+								"kind": "text",
+								"text": " is a no-op — a real transport\n(the Http adapter) drains the queue separately."
+							}
+						]
+					},
+					"parameters": [
+						{
+							"id": 68,
+							"name": "config",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"target": 69,
+								"name": "LocalStorageAdapterConfig",
+								"package": "@anvilkit/analytics-core"
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"target": 30,
+						"name": "AnalyticsAdapter",
+						"package": "@anvilkit/analytics-core"
+					}
+				}
+			]
+		},
+		{
+			"id": 78,
+			"name": "createNoopAdapter",
+			"variant": "declaration",
+			"kind": 64,
+			"flags": {},
+			"signatures": [
+				{
+					"id": 79,
+					"name": "createNoopAdapter",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "An adapter that discards everything. Use in CI/tests (or as the safe\nno-provider fallback in "
+							},
+							{
+								"kind": "code",
+								"text": "`@anvilkit/analytics-react`"
+							},
+							{
+								"kind": "text",
+								"text": ") so instrumented code\nruns without emitting anything."
+							}
+						]
+					},
+					"type": {
+						"type": "reference",
+						"target": 30,
+						"name": "AnalyticsAdapter",
+						"package": "@anvilkit/analytics-core"
+					}
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Interfaces",
+			"children": [
+				30,
+				26,
+				5,
+				52,
+				44,
+				69,
+				1,
+				15
+			]
+		},
+		{
+			"title": "Type Aliases",
+			"children": [
+				88
+			]
+		},
+		{
+			"title": "Variables",
+			"children": [
+				80,
+				65,
+				89
+			]
+		},
+		{
+			"title": "Functions",
+			"children": [
+				59,
+				62,
+				66,
+				78
+			]
+		}
+	],
+	"packageName": "@anvilkit/analytics-core",
+	"symbolIdMap": {
+		"0": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/index.ts",
+			"qualifiedName": ""
+		},
+		"1": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "PrivacyConfig"
+		},
+		"2": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "PrivacyConfig.consentGranted"
+		},
+		"3": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "PrivacyConfig.truncateIpAddress"
+		},
+		"4": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "PrivacyConfig.retentionDays"
+		},
+		"5": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "BaseEventData"
+		},
+		"6": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "BaseEventData.event_name"
+		},
+		"7": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "BaseEventData.version"
+		},
+		"8": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "BaseEventData.timestamp"
+		},
+		"9": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "BaseEventData.session_id"
+		},
+		"10": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "BaseEventData.user_id"
+		},
+		"11": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "BaseEventData.workspace_id"
+		},
+		"12": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "BaseEventData.page_id"
+		},
+		"13": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "BaseEventData.source"
+		},
+		"14": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "BaseEventData.experiment_id"
+		},
+		"15": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "TrackEvent"
+		},
+		"16": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "TrackEvent.properties"
+		},
+		"17": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "BaseEventData.event_name"
+		},
+		"18": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "BaseEventData.version"
+		},
+		"19": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "BaseEventData.timestamp"
+		},
+		"20": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "BaseEventData.session_id"
+		},
+		"21": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "BaseEventData.user_id"
+		},
+		"22": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "BaseEventData.workspace_id"
+		},
+		"23": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "BaseEventData.page_id"
+		},
+		"24": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "BaseEventData.source"
+		},
+		"25": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "BaseEventData.experiment_id"
+		},
+		"26": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "AnalyticsProcessor"
+		},
+		"27": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "AnalyticsProcessor.process"
+		},
+		"28": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "AnalyticsProcessor.process"
+		},
+		"29": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "event"
+		},
+		"30": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "AnalyticsAdapter"
+		},
+		"31": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "AnalyticsAdapter.track"
+		},
+		"32": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "AnalyticsAdapter.track"
+		},
+		"33": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "eventName"
+		},
+		"34": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "properties"
+		},
+		"35": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "AnalyticsAdapter.identify"
+		},
+		"36": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "AnalyticsAdapter.identify"
+		},
+		"37": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "userId"
+		},
+		"38": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "traits"
+		},
+		"39": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "AnalyticsAdapter.flush"
+		},
+		"40": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "AnalyticsAdapter.flush"
+		},
+		"41": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "AnalyticsAdapter.updatePrivacyStatus"
+		},
+		"42": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "AnalyticsAdapter.updatePrivacyStatus"
+		},
+		"43": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "consent"
+		},
+		"44": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "HttpAdapterConfig"
+		},
+		"45": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "HttpAdapterConfig.endpoint"
+		},
+		"46": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "HttpAdapterConfig.batchSize"
+		},
+		"47": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "HttpAdapterConfig.flushIntervalMs"
+		},
+		"48": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "HttpAdapterConfig.maxRetries"
+		},
+		"49": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "HttpAdapterConfig.source"
+		},
+		"50": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "HttpAdapterConfig.privacy"
+		},
+		"51": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/types.ts",
+			"qualifiedName": "HttpAdapterConfig.processors"
+		},
+		"52": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/console.ts",
+			"qualifiedName": "ConsoleAdapterConfig"
+		},
+		"53": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/console.ts",
+			"qualifiedName": "ConsoleAdapterConfig.source"
+		},
+		"54": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/console.ts",
+			"qualifiedName": "ConsoleAdapterConfig.consentGranted"
+		},
+		"55": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/console.ts",
+			"qualifiedName": "ConsoleAdapterConfig.logger"
+		},
+		"56": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/console.ts",
+			"qualifiedName": "ConsoleAdapterConfig.userId"
+		},
+		"57": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/console.ts",
+			"qualifiedName": "ConsoleAdapterConfig.workspaceId"
+		},
+		"58": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/console.ts",
+			"qualifiedName": "ConsoleAdapterConfig.pageId"
+		},
+		"59": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/console.ts",
+			"qualifiedName": "createConsoleAdapter"
+		},
+		"60": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/console.ts",
+			"qualifiedName": "createConsoleAdapter"
+		},
+		"61": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/console.ts",
+			"qualifiedName": "config"
+		},
+		"62": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/http.ts",
+			"qualifiedName": "createHttpAdapter"
+		},
+		"63": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/http.ts",
+			"qualifiedName": "createHttpAdapter"
+		},
+		"64": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/http.ts",
+			"qualifiedName": "config"
+		},
+		"65": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/local-storage.ts",
+			"qualifiedName": "ANALYTICS_QUEUE_KEY"
+		},
+		"66": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/local-storage.ts",
+			"qualifiedName": "createLocalStorageAdapter"
+		},
+		"67": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/local-storage.ts",
+			"qualifiedName": "createLocalStorageAdapter"
+		},
+		"68": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/local-storage.ts",
+			"qualifiedName": "config"
+		},
+		"69": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/local-storage.ts",
+			"qualifiedName": "LocalStorageAdapterConfig"
+		},
+		"70": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/local-storage.ts",
+			"qualifiedName": "LocalStorageAdapterConfig.source"
+		},
+		"71": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/local-storage.ts",
+			"qualifiedName": "LocalStorageAdapterConfig.consentGranted"
+		},
+		"72": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/local-storage.ts",
+			"qualifiedName": "LocalStorageAdapterConfig.storageKey"
+		},
+		"73": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/local-storage.ts",
+			"qualifiedName": "LocalStorageAdapterConfig.maxQueueSize"
+		},
+		"74": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/local-storage.ts",
+			"qualifiedName": "LocalStorageAdapterConfig.storage"
+		},
+		"75": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/local-storage.ts",
+			"qualifiedName": "LocalStorageAdapterConfig.userId"
+		},
+		"76": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/local-storage.ts",
+			"qualifiedName": "LocalStorageAdapterConfig.workspaceId"
+		},
+		"77": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/local-storage.ts",
+			"qualifiedName": "LocalStorageAdapterConfig.pageId"
+		},
+		"78": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/noop.ts",
+			"qualifiedName": "createNoopAdapter"
+		},
+		"79": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/adapters/noop.ts",
+			"qualifiedName": "createNoopAdapter"
+		},
+		"80": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/event-catalog.ts",
+			"qualifiedName": "ANALYTICS_EVENTS"
+		},
+		"81": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/event-catalog.ts",
+			"qualifiedName": "__object"
+		},
+		"82": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/event-catalog.ts",
+			"qualifiedName": "__object.PAGE_VIEW"
+		},
+		"83": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/event-catalog.ts",
+			"qualifiedName": "__object.DRAFT_SAVED"
+		},
+		"84": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/event-catalog.ts",
+			"qualifiedName": "__object.PAGE_PUBLISHED"
+		},
+		"85": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/event-catalog.ts",
+			"qualifiedName": "__object.COMPONENT_DROPPED"
+		},
+		"86": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/event-catalog.ts",
+			"qualifiedName": "__object.SEO_UPDATED"
+		},
+		"87": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/event-catalog.ts",
+			"qualifiedName": "__object.PLUGIN_TOGGLED"
+		},
+		"88": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/event-catalog.ts",
+			"qualifiedName": "AnalyticsEventName"
+		},
+		"89": {
+			"packageName": "@anvilkit/analytics-core",
+			"packagePath": "src/event-catalog.ts",
+			"qualifiedName": "EVENT_VERSION"
+		}
+	},
+	"files": {
+		"entries": {
+			"1": "src/index.ts"
+		},
+		"reflections": {
+			"1": 0
+		}
+	}
+}
