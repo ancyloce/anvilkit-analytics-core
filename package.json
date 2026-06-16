@@ -1,0 +1,100 @@
+{
+	"name": "@anvilkit/analytics-core",
+	"version": "0.1.0",
+	"description": "Framework-agnostic, React-free analytics adapters, event catalog, and transport for AnvilKit Studio.",
+	"type": "module",
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.js",
+	"types": "./dist/index.d.ts",
+	"exports": {
+		".": {
+			"import": {
+				"types": "./dist/index.d.ts",
+				"default": "./dist/index.js"
+			},
+			"require": {
+				"types": "./dist/index.d.cts",
+				"default": "./dist/index.cjs"
+			}
+		},
+		"./ga4": {
+			"import": {
+				"types": "./dist/adapters/ga4.d.ts",
+				"default": "./dist/adapters/ga4.js"
+			},
+			"require": {
+				"types": "./dist/adapters/ga4.d.cts",
+				"default": "./dist/adapters/ga4.cjs"
+			}
+		},
+		"./posthog": {
+			"import": {
+				"types": "./dist/adapters/posthog.d.ts",
+				"default": "./dist/adapters/posthog.js"
+			},
+			"require": {
+				"types": "./dist/adapters/posthog.d.cts",
+				"default": "./dist/adapters/posthog.cjs"
+			}
+		},
+		"./*": {
+			"import": {
+				"types": "./dist/*.d.ts",
+				"default": "./dist/*.js"
+			},
+			"require": {
+				"types": "./dist/*.d.cts",
+				"default": "./dist/*.cjs"
+			}
+		}
+	},
+	"files": [
+		"dist"
+	],
+	"license": "MIT",
+	"sideEffects": false,
+	"publishConfig": {
+		"access": "public"
+	},
+	"peerDependencies": {
+		"posthog-js": "^1.255.0"
+	},
+	"peerDependenciesMeta": {
+		"posthog-js": {
+			"optional": true
+		}
+	},
+	"scripts": {
+		"build": "rslib build",
+		"dev": "rslib build --watch",
+		"lint": "pnpm exec biome lint package.json tsconfig.json rslib.config.ts vitest.config.ts src",
+		"format": "pnpm exec biome check --write package.json tsconfig.json rslib.config.ts vitest.config.ts src",
+		"typecheck": "tsc --noEmit",
+		"test": "vitest run",
+		"test:watch": "vitest",
+		"publint": "publint",
+		"check:publint": "publint",
+		"check:circular": "madge --circular --extensions ts src/",
+		"check:react-free-runtime": "node ./scripts/check-react-free.mjs",
+		"check:peer-deps": "node ./scripts/check-peer-deps.mjs",
+		"check:bundle-budget": "node ./scripts/check-bundle-budget.mjs",
+		"check:api-snapshot": "node ./scripts/check-api-snapshot.mjs",
+		"check:all": "pnpm check:publint && pnpm check:circular && pnpm check:react-free-runtime && pnpm check:peer-deps && pnpm check:bundle-budget && pnpm check:api-snapshot",
+		"size": "size-limit"
+	},
+	"devDependencies": {
+		"@anvilkit/biome-config": "workspace:*",
+		"@anvilkit/typescript-config": "workspace:*",
+		"@anvilkit/vitest-config": "workspace:*",
+		"@rslib/core": "^0.22.0",
+		"@types/node": "^25.9.1",
+		"esbuild": "^0.28.0",
+		"madge": "^8.0.0",
+		"publint": "^0.3.21",
+		"posthog-js": "^1.255.0",
+		"typedoc": "^0.28.19",
+		"typedoc-plugin-markdown": "^4.11.0",
+		"typescript": "6.0.3",
+		"vitest": "^4.1.7"
+	}
+}

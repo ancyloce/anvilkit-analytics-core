@@ -1,0 +1,22 @@
+[
+	{
+		"name": "@anvilkit/analytics-core",
+		"path": "dist/index.js",
+		"limit": "6 KB",
+		"gzip": true,
+		"ignore": ["posthog-js"]
+	},
+	{
+		"name": "@anvilkit/analytics-core/ga4",
+		"path": "dist/adapters/ga4.js",
+		"limit": "2 KB",
+		"gzip": true
+	},
+	{
+		"name": "@anvilkit/analytics-core/posthog",
+		"path": "dist/adapters/posthog.js",
+		"limit": "2 KB",
+		"gzip": true,
+		"ignore": ["posthog-js"]
+	}
+]
