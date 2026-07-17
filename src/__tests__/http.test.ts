@@ -76,9 +76,9 @@ describe("createHttpAdapter — batching", () => {
 			batchSize: 1,
 		});
 		a.track("component_dropped", { component_type: "Hero", tree: { a: 1 } });
-		const body = JSON.parse(
-			(fetchMock.mock.calls[0]?.[1] as RequestInit).body as string,
-		);
+		const request = fetchMock.mock.calls[0]?.[1] as RequestInit | undefined;
+		if (!request) throw new Error("Expected analytics request");
+		const body = JSON.parse(request.body as string);
 		expect(body.events[0].properties).toEqual({ component_type: "Hero" });
 	});
 });
@@ -174,7 +174,9 @@ describe("createHttpAdapter — visibilitychange (bfcache-safe)", () => {
 		doc.fire("visibilitychange");
 		expect(sendBeacon).toHaveBeenCalledTimes(1);
 		expect(fetchMock).toHaveBeenCalledTimes(1);
-		expect((fetchMock.mock.calls[0]?.[1] as RequestInit).keepalive).toBe(true);
+		const request = fetchMock.mock.calls[0]?.[1] as RequestInit | undefined;
+		if (!request) throw new Error("Expected analytics request");
+		expect(request.keepalive).toBe(true);
 	});
 });
 
