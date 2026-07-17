@@ -13,7 +13,7 @@
 				"default": "./dist/index.js"
 			},
 			"require": {
-				"types": "./dist/index.d.cts",
+				"types": "./dist/cjs/index.d.cts",
 				"default": "./dist/index.cjs"
 			}
 		},
@@ -23,7 +23,7 @@
 				"default": "./dist/adapters/ga4.js"
 			},
 			"require": {
-				"types": "./dist/adapters/ga4.d.cts",
+				"types": "./dist/cjs/adapters/ga4.d.cts",
 				"default": "./dist/adapters/ga4.cjs"
 			}
 		},
@@ -33,7 +33,7 @@
 				"default": "./dist/adapters/posthog.js"
 			},
 			"require": {
-				"types": "./dist/adapters/posthog.d.cts",
+				"types": "./dist/cjs/adapters/posthog.d.cts",
 				"default": "./dist/adapters/posthog.cjs"
 			}
 		},
@@ -43,7 +43,7 @@
 				"default": "./dist/*.js"
 			},
 			"require": {
-				"types": "./dist/*.d.cts",
+				"types": "./dist/cjs/*.d.cts",
 				"default": "./dist/*.cjs"
 			}
 		}
@@ -65,7 +65,7 @@
 		}
 	},
 	"scripts": {
-		"build": "rslib build",
+		"build": "rslib build --lib esm && rslib build --lib cjs --no-clean",
 		"dev": "rslib build --watch",
 		"lint": "pnpm exec biome lint package.json tsconfig.json rslib.config.ts vitest.config.ts src",
 		"format": "pnpm exec biome check --write package.json tsconfig.json rslib.config.ts vitest.config.ts src",
