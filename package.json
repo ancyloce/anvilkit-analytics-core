@@ -91,7 +91,7 @@
 		"esbuild": "^0.28.1",
 		"madge": "^8.0.0",
 		"posthog-js": "^1.255.0",
-		"publint": "^0.3.21",
+		"publint": "^0.3.22",
 		"typedoc": "^0.28.20",
 		"typescript": "7.0.2",
 		"vitest": "^4.1.10"
