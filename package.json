@@ -87,11 +87,11 @@
 		"@anvilkit/typescript-config": "workspace:*",
 		"@anvilkit/vitest-config": "workspace:*",
 		"@rslib/core": "^0.23.2",
-		"@types/node": "^26.1.1",
+		"@types/node": "^26.2.0",
 		"esbuild": "^0.28.1",
 		"madge": "^8.0.0",
 		"posthog-js": "^1.255.0",
-		"publint": "^0.3.22",
+		"publint": "^0.3.23",
 		"typedoc": "^0.28.20",
 		"typescript": "7.0.2",
 		"vitest": "^4.1.10"
